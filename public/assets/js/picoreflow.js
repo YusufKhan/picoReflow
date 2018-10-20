@@ -11,8 +11,8 @@ var time_scale_slope = "s";
 var time_scale_profile = "s";
 var time_scale_long = "Seconds";
 var temp_scale_display = "C";
-var kwh_rate = 0.26;
-var currency_type = "EUR";
+var kwh_rate = 2.1032;
+var currency_type = "ZAR";
 
 var host = "ws://" + window.location.hostname + ":" + window.location.port;
 var ws_status = new WebSocket(host+"/status");
@@ -47,7 +47,7 @@ function updateProfile(id)
     selected_profile = id;
     selected_profile_name = profiles[id].name;
     var job_seconds = profiles[id].data.length === 0 ? 0 : parseInt(profiles[id].data[profiles[id].data.length-1][0]);
-    var kwh = (3850*job_seconds/3600/1000).toFixed(2);
+    var kwh = (800*job_seconds/3600).toFixed(2);	//Rough approximation, assuming full power throughout job
     var cost =  (kwh*kwh_rate).toFixed(2);
     var job_time = new Date(job_seconds * 1000).toISOString().substr(11, 8);
     $('#sel_prof').html(profiles[id].name);
