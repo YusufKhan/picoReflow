@@ -146,10 +146,12 @@ class Oven (threading.Thread):
                 #    self.set_heat(False)
                 #    self.set_cool(self.temp_sensor.temperature > self.target)
 
-                if self.temp_sensor.temperature > 200:
-                    self.set_air(False)
-                elif self.temp_sensor.temperature < 180:
-                    self.set_air(True)
+                # Air always on
+                self.set_air(True)
+                #if self.temp_sensor.temperature > 200:
+                #    self.set_air(False)
+                #elif self.temp_sensor.temperature < 180:
+                #    self.set_air(True)
 
                 if self.runtime >= self.totaltime:
                     self.reset()
@@ -190,6 +192,7 @@ class Oven (threading.Thread):
             if gpio_available:
                 GPIO.output(config.gpio_cool, GPIO.HIGH)
 
+#       Air will be on throughout job
     def set_air(self, value):
         if value:
             self.air = 1.0
