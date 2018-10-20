@@ -1,6 +1,9 @@
 picoReflow
 ==========
 
+Changes between this fork and the original:
+Air is always on, for convection ovens with separate heat and fan controls
+
 Turns a Raspberry Pi into a cheap, universal & web-enabled Reflow Oven Controller.
 Of course, since it is basically just a robot sensing temperature and controlling
 environmental agitators (heating/cooling) you can use it as inspiration / basis
