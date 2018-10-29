@@ -11,7 +11,7 @@ var time_scale_slope = "s";
 var time_scale_profile = "s";
 var time_scale_long = "Seconds";
 var temp_scale_display = "C";
-var kwh_rate = 2.1032;
+var kwh_rate = 2.10;
 var currency_type = "ZAR";
 
 var host = "ws://" + window.location.hostname + ":" + window.location.port;
